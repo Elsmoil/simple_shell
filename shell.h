@@ -87,16 +87,19 @@ typedef struct passinfo
 {NULL, NULL, NULL, 0, 0, 0, 0, NULL, NULL, NULL, NULL, NULL, 0, 0, NULL, \
 	0, 0, 0}
 
+/*execute function*/
+void execute(char *comm);
+
 /* atoi.c */
 int interactive(info_t *);
 int is_delim(char, char *);
 int _isalpha(int);
 int _atoi(char *);
+int _strlen(char *str);
 
 /* cmd.c */
-int _exit(info_ *);
-int _cd(info_ *);
-int _help(info_ *);
+int _cd(info_t *);
+int _help(info_t *);
 
 /* mems.c */
 char *_memset(char *, char, unsigned int);
