@@ -21,7 +21,7 @@ void execute(char *comm)
 	}
 	argv[i] = NULL;
 
-	if (_strchr(argv[0], '/') != NULL)
+	if (_strchr(argv[0], '/') == NULL)
 	{
 		path = getenv("PATH");
 		copy_path = strdup(path);

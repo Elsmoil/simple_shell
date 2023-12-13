@@ -10,6 +10,8 @@ int main(void)
 	char *p;
 	size_t size;
 	char *promt = "$ ";
+	int input_len;
+	char c;
 
 	while (1)
 	{
@@ -19,6 +21,14 @@ int main(void)
 
 			if ((getline(&p, &size, stdin) == -1))
 				break;
+			input_len = strlen(p);
+
+			if (input_len > 0)
+			{
+				c = p[input_len - 1];
+				if (c == '\n')
+					p[input_len - 1] = '\0';
+			}
 
 			if (strcmp(p, "exit") == 0)
 				break;
