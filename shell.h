@@ -59,6 +59,7 @@ typedef struct liststr
  *@cmd_buf_type: CMD_type ||, &&, ;
  *@readfd: the fd from which to read line input
  *@histcount: the history line number count
+ *@comm: command
  */
 typedef struct passinfo
 {
@@ -75,6 +76,7 @@ typedef struct passinfo
 	list_t *alias;
 	char **environ;
 	int env_chang;
+	char *comm;
 	int status;
 
 	char **cmd_buf; /* pointer to cmd ; chain buffer, for memory mangement */
