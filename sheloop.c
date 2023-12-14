@@ -52,7 +52,6 @@ int hsh(info_ *info, char **av)
  *			1 if builtin found but not successful,
  *			-2 if builtin signals exit()
  */
-
 int find_builtin(info_ *info)
 {
 	int i, built_in_ret = -1;
@@ -146,6 +145,7 @@ void fork_cmd(info_ *info)
 				exit(126);
 			exit(1);
 		}
+		/* TODO: PUT ERROR FUNCTION */
 	}
 	else
 	{

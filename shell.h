@@ -98,6 +98,11 @@ int is_delim(char, char *);
 int _isalpha(int);
 int _atoi(char *);
 int _strlen(char *str);
+/* shloop.c */
+int hsh(info_ *, char **);
+int find_builtin(info_ *);
+void find_cmd(info_ *);
+void fork_cmd(info_ *);
 
 /* string.c */
 int _strlen(char *);
@@ -111,9 +116,48 @@ char *_strdup(const char *);
 void _puts(char *);
 int _putchar(char);
 
+/* parser.c */
+int is_cmd(info_ *, char *);
+char *dup_chars(char *, int, int);
+char *find_path(info_ *, char *, char *);
+
+int loophsh(char **);
+void _eputs(char *);
+int _eputchar(char);
+int _putfd(char c, int fd);
+int _putsfd(char *str, int fd);
+
+int _erratoi(char *);
+void print_error(info_ *, char *);
+int print_d(int, int);
+char *convert_number(long int, int, int);
+void remove_comments(char *);
+
+/* exits.c */
+char *_strncpy(char *, char *, int);
+char *_strncat(char *, char *, int);
+char *_strchr(char *, char);
+
 /* cmd.c */
 int _cd(info_ *);
 int _help(info_ *);
+
+/* built.c */
+int _exit(info_ *);
+int _cd(info_ *);
+int _help(info_ *);
+
+/* environ.c */
+char *_getenv(info_ *, const char *);
+int _env(info_ *);
+int _setenv(info_ *);
+int _unsetenv(info_ *);
+int populate_env_list(info_ *);
+
+/* getenv.c */
+char **get_environ(info_ *);
+int _unsetenv(info_ *, char *);
+int _setenv(info_ *, char *, char *);
 
 /* mems.c */
 char *_memset(char *, char, unsigned int);
