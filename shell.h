@@ -83,7 +83,7 @@ typedef struct passinfo
 	int cmd_buf_type; /* CMD_type ||, &&, ; */
 	int readfd;
 	int histcount;
-} info_t;
+} info_;
 
 #define INFO_INIT \
 {NULL, NULL, NULL, 0, 0, 0, 0, NULL, NULL, NULL, NULL, NULL, 0, 0, NULL, \
@@ -93,15 +93,27 @@ typedef struct passinfo
 void execute(char *comm);
 
 /* atoi.c */
-int interactive(info_t *);
+int interactive(info_ *);
 int is_delim(char, char *);
 int _isalpha(int);
 int _atoi(char *);
 int _strlen(char *str);
 
+/* string.c */
+int _strlen(char *);
+int _strcmp(char *, char *);
+char *starts_with(const char *, const char *);
+char *_strcat(char *, char *);
+
+/* string1.c */
+char *_strcpy(char *, char *);
+char *_strdup(const char *);
+void _puts(char *);
+int _putchar(char);
+
 /* cmd.c */
-int _cd(info_t *);
-int _help(info_t *);
+int _cd(info_ *);
+int _help(info_ *);
 
 /* mems.c */
 char *_memset(char *, char, unsigned int);

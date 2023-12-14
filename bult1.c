@@ -7,7 +7,7 @@
  *        constant function prototype.
  *  Return: Always 0
  */
-int _history(info_t *info)
+int _history(info_ *info)
 {
 	print_list(info->history);
 	return (0);
@@ -20,7 +20,7 @@ int _history(info_t *info)
  *
  * Return: Always 0 on success, 1 on error
  */
-int unset_alias(info_t *info, char *str)
+int unset_alias(info_ *info, char *str)
 {
 	char *p, c;
 	int ret;
@@ -43,7 +43,7 @@ int unset_alias(info_t *info, char *str)
  *
  * Return: Always 0 on success, 1 on error
  */
-int set_alias(info_t *info, char *str)
+int set_alias(info_ *info, char *str)
 {
 	char *p;
 
@@ -86,7 +86,7 @@ int print_alias(list_t *node)
  *          constant function prototype.
  *  Return: Always 0
  */
-int _alias(info_t *info)
+int _alias(info_ *info)
 {
 	int i = 0;
 	char *p = NULL;
@@ -98,7 +98,7 @@ int _alias(info_t *info)
 		while (node)
 		{
 			print_alias(node);
-			node = node->next;
+			node = node->nex;
 		}
 		return (0);
 	}
